@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @AllArgsConstructor
@@ -18,4 +19,8 @@ public class User {
     private String userName;
     private String userEmail;
     private String userMobile;
+
+    @OneToMany(targetEntity = CartDetail.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_ID" , referencedColumnName = "userID")
+    private List<CartDetail> cartDetails;
 }

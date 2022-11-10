@@ -12,6 +12,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+
+/**
+ * User Controller Implementation
+ * @author Lakshika De Zoysa
+ */
 @RestController
 @RequestMapping("api/v1/user")
 public class UserController {
@@ -21,6 +26,11 @@ public class UserController {
     @Autowired
     private ResponseDTO responseDTO;
 
+    /**
+     * Insert User
+     * @param userDTO
+     * @return updated {@link ResponseEntity} object
+     */
     @PostMapping(value = "/saveUser")
     public ResponseEntity saveUser(@RequestBody UserDTO userDTO){
         try {
