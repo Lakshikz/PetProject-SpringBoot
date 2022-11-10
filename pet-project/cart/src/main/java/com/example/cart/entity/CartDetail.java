@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @AllArgsConstructor
@@ -18,18 +19,5 @@ public class CartDetail {
     private int qty;
     private String dateAdded;
 
-    @OneToOne
-    @JoinColumn(
-            name = "brand_ID",
-            referencedColumnName = "brandID"
 
-    )
-    private Brand brand;
-
-    @OneToOne
-    @JoinColumn(
-            name = "user_ID",
-            referencedColumnName = "userID"
-    )
-    private User user;
 }
